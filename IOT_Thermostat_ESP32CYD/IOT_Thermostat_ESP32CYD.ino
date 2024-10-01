@@ -1,13 +1,12 @@
-#include <OneWire.h>
-#include <DallasTemperature.h>
-#include <WiFi.h>
-#include <PubSubClient.h>
-#include <TFT_eSPI.h>
-#include <Preferences.h>
-#include <ESPAsyncWebServer.h>
-#include <AsyncTCP.h>
-#include <ArduinoJson.h>
-#include <Preferences.h>
+#include <OneWire.h>              // Author: Jim Studt, Tom Pollard, et al. | Version: 2.3.7 (2022)
+#include <DallasTemperature.h>    // Author: Miles Burton | Version: 3.9.0 (2020)
+#include <WiFi.h>                 // Author: Arduino | Version: 2.0.0 (2022) - Part of ESP32 Arduino Core
+#include <PubSubClient.h>         // Author: Nick O'Leary | Version: 2.8.0 (2021)
+#include <TFT_eSPI.h>             // Author: Bodmer | Version: 2.5.0 (2023)
+#include <Preferences.h>          // Author: Espressif Systems | Version: 2.0.0 (2022) - Part of ESP32 Arduino Core
+#include <ESPAsyncWebServer.h>    // Author: Me No Dev | Version: 1.2.3 (2019)
+#include <AsyncTCP.h>             // Author: Me No Dev | Version: 1.1.1 (2019)
+#include <ArduinoJson.h>          // Author: Benoit Blanchon | Version: 6.21.2 (2023)
 
 #include "Config.h"
 #include "ACControl.h"
