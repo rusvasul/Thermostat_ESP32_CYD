@@ -1,4 +1,4 @@
-#include <OneWire.h>              // Author: Jim Studt, Tom Pollard, et al. | Version: 2.3.7 (2022)
+#include <OneWire.h>              // Author: Paul Stoffregen, et al. | Version: 2.3.8 (2024)
 #include <DallasTemperature.h>    // Author: Miles Burton | Version: 3.9.0 (2020)
 #include <WiFi.h>                 // Author: Arduino | Version: 2.0.0 (2022) - Part of ESP32 Arduino Core
 #include <PubSubClient.h>         // Author: Nick O'Leary | Version: 2.8.0 (2021)
@@ -18,7 +18,6 @@ OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 WiFiClient espClient;
 PubSubClient mqttClient(espClient);
-TFT_eSPI tft = TFT_eSPI();
 Preferences preferences;
 AsyncWebServer server(80);
 
@@ -80,6 +79,7 @@ void loop() {
       updateTemperatures();
       controlAC();
       updateDisplay();
+      checkTouchInput();
       
       if (connectedToWiFi) {
         handleMQTT();

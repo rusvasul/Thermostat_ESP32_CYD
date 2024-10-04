@@ -2,10 +2,12 @@
 #define DISPLAY_CONTROL_H
 
 #include <TFT_eSPI.h>
-#include <vector>
+#include <SPI.h>
+#include <XPT2046_Touchscreen.h>
 #include "Config.h"
 
 extern TFT_eSPI tft;
+extern XPT2046_Touchscreen touchscreen;
 
 // Function declarations
 void initializeDisplay();
@@ -27,5 +29,9 @@ extern String mqttServer;
 extern bool inConfigMode;
 extern bool connectionConfigActive;
 extern bool acConfigActive;
+
+// Touch screen calibration
+#define SCREEN_WIDTH 320
+#define SCREEN_HEIGHT 240
 
 #endif // DISPLAY_CONTROL_H
